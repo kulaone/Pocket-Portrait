@@ -46,18 +46,37 @@ The app is built using modern Android development practices:
 
 1. **Gemini API Key:** Get a free or pay-as-you-go API key from the [Google AI Studio](https://aistudio.google.com/).
 2. **A BLE Thermal Printer:** Works with standard 2-inch (58mm) pocket thermal printers supporting 384-pixel width rows.
-3. **Android Studio:** Ladybug (or newer) with JDK 17+.
+3. **Build Tools (Choose one option):**
+   - **Option A (IDE):** Android Studio Ladybug (or newer) with JDK 17+.
+   - **Option B (Command Line):** Java Development Kit (JDK) 17+ (e.g., OpenJDK).
 
 ### How to Run
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/pocket-portrait.git
+   git clone https://github.com/kulaone/Pocket-Portrait.git
    ```
-2. Open the project in Android Studio.
-3. Build and run the app on an Android device running Android 8.0 (API 26) or higher.
-4. Input your Gemini API key in the app's **Settings** screen (the key is securely stored in your device's keystore).
-5. Turn on your thermal printer, scan for devices in the app, and print!
+
+2. Choose one of the following methods to build and run the app on your Android device (running Android 8.0/API 26 or higher):
+
+   #### Method A: Using Android Studio
+   1. Open Android Studio and choose **Open an Existing Project**, selecting the `pocket-portrait` directory.
+   2. Connect your Android device via USB (ensure USB Debugging is enabled).
+   3. Select the `prodDebug` build variant and click **Run** (the green play button) to install and launch.
+
+   #### Method B: Using the Command Line
+   1. Connect your Android device via USB (ensure USB Debugging is enabled and `adb` is in your system path).
+   2. Compile and install the production debug flavor:
+      ```bash
+      ./gradlew installProdDebug
+      ```
+   3. Launch the app on your device:
+      ```bash
+      adb shell am start -n com.tinyprint.portraitstudio/com.tinyprint.portraitstudio.prod.MainActivity
+      ```
+
+3. Input your Gemini API key in the app's **Settings** screen (the key is securely stored in your device's keystore).
+4. Turn on your thermal printer, scan for devices in the app, and print!
 
 ---
 
