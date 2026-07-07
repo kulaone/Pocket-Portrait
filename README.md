@@ -46,7 +46,7 @@ The app is built using modern Android development practices:
 
 1. **Gemini API Key:** Get a free or pay-as-you-go API key from the [Google AI Studio](https://aistudio.google.com/).
 2. **A BLE Thermal Printer:** Works with standard 2-inch (58mm) pocket thermal printers supporting 384-pixel width rows.
-3. **Android Studio:** Android Studio Ladybug (or newer) with JDK 17+.
+3. **Android Studio:** Ladybug (or newer) with JDK 17+.
 
 ### How to Run
 
